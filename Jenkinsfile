@@ -9,6 +9,8 @@ node {
    // **       in the global configuration.           
    def mvnHome = tool 'M3'
 
+   env.JAVA_HOME = tool 'JDK-1.8'
+   bat "\"${mvnHome}\"\\bin\\mvn -B verify"
    // Mark the code build 'stage'....
    stage 'Build'
    // Run the maven build
